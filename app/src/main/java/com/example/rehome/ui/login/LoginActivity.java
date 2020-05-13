@@ -25,6 +25,9 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONObject;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends AppCompatActivity {
@@ -37,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
 
     Animation logo_fetching;
     Animation logo_decline;
+
+    private int clickCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 RequestParams params = RequestParamsFactory.loginParams(
                         emailInput.getText().toString().trim(),
                         passwordInput.getText().toString());
@@ -71,13 +77,53 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         } else {
                             logo.startAnimation(logo_decline);
-                            ThematicSnackbar.SnackbarTextShow(getString(R.string.wrongLoginData), emailInput);
+                            ThematicSnackbar.SnackbarTextShow(getString(R.string.wrong_login_data), emailInput);
                         }
                     }
                 });
 
-
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (clickCounter >= 1) {
+            finishAffinity();
+        } else {
+            ThematicSnackbar.SnackbarTextShow(getString(R.string.click_to_exit), emailInput);
+            clickCounter++;
+            Timer clickTimer = new Timer();
+            MyTimerTask clickTimerTask = new MyTimerTask(new Action() {
+                @Override
+                public void action() {
+                    clickCounter = 0;
+                }
+            });
+            clickTimer.schedule(clickTimerTask, 3000);
+        }
+    }
+
+    class MyTimerTask extends TimerTask {
+        Action action;
+
+        MyTimerTask(Action act) {
+            action = act;
+        }
+
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    action.action();
+                }
+            });
+        }
+    }
+
+    interface Action {
+        void action();
     }
 }

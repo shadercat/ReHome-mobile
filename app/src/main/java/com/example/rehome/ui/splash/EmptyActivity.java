@@ -13,6 +13,7 @@ import com.example.rehome.MainActivity;
 import com.example.rehome.R;
 import com.example.rehome.connection.HttpClient;
 import com.example.rehome.connection.ResponseHandler;
+import com.example.rehome.ui.login.LoginActivity;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.PersistentCookieStore;
 
@@ -39,6 +40,7 @@ public class EmptyActivity extends AppCompatActivity {
         HttpClient.setCookieStorage(store);
 
         final Intent main = new Intent(this, MainActivity.class);
+        final Intent login = new Intent(this, LoginActivity.class);
 
         HttpClient.get(ConstantUrls.isAuthorized, null, new JsonHttpResponseHandler() {
             @Override
@@ -46,7 +48,7 @@ public class EmptyActivity extends AppCompatActivity {
                 if(ResponseHandler.IsSuccessed(response)){
                     startActivity(main);
                 } else {
-                    startActivity(main);
+                    startActivity(login);
                 }
                 finish();
             }

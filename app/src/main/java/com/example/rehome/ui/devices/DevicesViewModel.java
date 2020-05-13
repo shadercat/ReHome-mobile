@@ -1,14 +1,14 @@
-package com.example.rehome.ui.home;
+package com.example.rehome.ui.devices;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class DevicesViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public DevicesViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is home fragment");
     }

@@ -6,7 +6,11 @@
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="forgotPassword">Forgot password?</string>
-    <string name="createAccount">Create account</string>
-    <string name="wrongLoginData">Email or password wrong</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="create_account">Create account</string>
+    <string name="wrong_login_data">Email or password wrong.</string>
+    <string name="click_to_exit">Click one more time to exit.</string>
+    <string name="title_devices">Devices</string>
+    <string name="title_groups">Groups</string>
+    <string name="title_actions">Actions</string>
 </resources>
