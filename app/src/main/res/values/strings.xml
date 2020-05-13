@@ -13,4 +13,6 @@
     <string name="title_devices">Devices</string>
     <string name="title_groups">Groups</string>
     <string name="title_actions">Actions</string>
+    <string name="sample">SAMPLE</string>
+    <string name="device_code_p">Device code: %1$s</string>
 </resources>
