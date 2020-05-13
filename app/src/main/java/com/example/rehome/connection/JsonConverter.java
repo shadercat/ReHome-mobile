@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonConverter {
-    public List<Device> DeviceList(JSONObject object) {
+    public static List<Device> DeviceList(JSONObject object) {
         List<Device> devices = new ArrayList<>();
         try {
             JSONArray array = object.getJSONArray("data");

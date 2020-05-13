@@ -22,7 +22,7 @@ public class GroupsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         groupsViewModel =
                 ViewModelProviders.of(this).get(GroupsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View root = inflater.inflate(R.layout.fragment_groups, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         groupsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

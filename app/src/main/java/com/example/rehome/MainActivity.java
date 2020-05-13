@@ -1,7 +1,9 @@
 package com.example.rehome;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.rehome.ui.groups.GroupsFragment;
 import com.example.rehome.ui.devices.DevicesFragment;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
@@ -50,9 +53,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fm.beginTransaction().add(R.id.main_frame, devicesFragment, "1").show(devicesFragment).commit();
-        fm.beginTransaction().add(R.id.main_frame, groupsFragment, "2").hide(groupsFragment).commit();
-        fm.beginTransaction().add(R.id.main_frame, actionsFragment, "3").hide(actionsFragment).commit();
+        if (savedInstanceState == null) {
+            fm.beginTransaction().add(R.id.main_frame, devicesFragment, "1").show(devicesFragment).commit();
+            fm.beginTransaction().add(R.id.main_frame, groupsFragment, "2").hide(groupsFragment).commit();
+            fm.beginTransaction().add(R.id.main_frame, actionsFragment, "3").hide(actionsFragment).commit();
+        }
 
         BottomNavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
