@@ -17,4 +17,7 @@
     <string name="sample">SAMPLE</string>
     <string name="device_code_p">Device code: %1$s</string>
     <string name="id_p">ID: %1$s</string>
+    <string name="logout">Logout</string>
+    <string name="email_p">Email: %1$s</string>
+    <string name="creation_date_p">Creation date: %1$s</string>
 </resources>
