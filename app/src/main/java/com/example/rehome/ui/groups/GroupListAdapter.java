@@ -29,7 +29,7 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.Grou
     @NonNull
     @Override
     public GroupViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.group_item, parent, false);
+        View view = inflater.inflate(R.layout.item_group, parent, false);
         return new GroupViewHolder(view);
     }
 

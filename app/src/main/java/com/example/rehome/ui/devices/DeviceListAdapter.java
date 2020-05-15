@@ -31,7 +31,7 @@ public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.De
     @NonNull
     @Override
     public DeviceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.device_item, parent, false);
+        View view = inflater.inflate(R.layout.item_device, parent, false);
         return new DeviceViewHolder(view);
     }
 
