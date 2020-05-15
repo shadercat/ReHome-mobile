@@ -15,4 +15,5 @@
     <string name="title_actions">Actions</string>
     <string name="sample">SAMPLE</string>
     <string name="device_code_p">Device code: %1$s</string>
+    <string name="id_p">ID: %1$s</string>
 </resources>
