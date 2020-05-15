@@ -6,7 +6,9 @@ public class User {
     private String id;
 
     public User() {
-
+        name = "unknown";
+        email = "unknown";
+        id = "unknown";
     }
 
     public User(String name, String email, String id) {

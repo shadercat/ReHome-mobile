@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.example.rehome.models.Device;
 import com.example.rehome.models.ResourceGroup;
+import com.example.rehome.models.User;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,5 +53,18 @@ public class JsonConverter {
             Log.e(DEV_ERR, "JSON parse error: ", e);
         }
         return resourceGroups;
+    }
+
+    public static User UserData(JSONObject object) {
+        User user = new User();
+        try {
+            JSONObject data = object.getJSONObject("data");
+            user.setName(data.getString("name"));
+            user.setEmail(data.getString("email"));
+            user.setId(data.getString("_id"));
+        } catch (JSONException e) {
+            Log.e(DEV_ERR, "JSON parse error: ", e);
+        }
+        return user;
     }
 }
