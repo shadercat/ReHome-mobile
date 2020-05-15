@@ -3,7 +3,9 @@ package com.example.rehome.connection;
 import android.util.Log;
 
 import com.example.rehome.models.Device;
+import com.example.rehome.models.DeviceInfo;
 import com.example.rehome.models.ResourceGroup;
+import com.example.rehome.models.Trigger;
 import com.example.rehome.models.User;
 
 import org.json.JSONArray;
@@ -71,6 +73,38 @@ public class JsonConverter {
         return user;
     }
 
+    public static DeviceInfo DeviceInfoData(JSONObject object) {
+        DeviceInfo deviceInfo = new DeviceInfo();
+        try {
+            JSONObject data = object.getJSONObject("data");
+            deviceInfo.setName(data.getString("deviceName"));
+            deviceInfo.setCode(data.getString("deviceCode"));
+
+            JSONObject status = data.getJSONObject("deviceStatus");
+            deviceInfo.setState(status.getString("state"));
+            deviceInfo.setStatus(status.getString("status"));
+
+            JSONObject type = data.getJSONObject("deviceType");
+            deviceInfo.setType(type.getString("name"));
+            deviceInfo.setTypeCode(type.getString("code"));
+
+            JSONArray triggers = type.getJSONArray("triggers");
+            JSONObject trigger;
+            for (int i = 0; i < triggers.length(); i++) {
+                trigger = triggers.getJSONObject(i);
+                String name = trigger.getString("name");
+                String code = trigger.getString("code");
+                String description = trigger.getString("description");
+                deviceInfo.triggers.add(new Trigger(name, code, description));
+            }
+
+            deviceInfo.setCreatedAt(parseDate(data.getString("createdAt")));
+        } catch (JSONException e) {
+            Log.e(DEV_ERR, "JSON parse error: ", e);
+        }
+        return deviceInfo;
+    }
+
     private static String parseDate(String mongoDate) {
         String stringDate = "unknown";
         try {
@@ -83,4 +117,5 @@ public class JsonConverter {
         }
         return stringDate;
     }
+
 }

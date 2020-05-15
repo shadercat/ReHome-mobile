@@ -6,6 +6,7 @@ public class Device {
     private String name;
     private String code;
 
+
     public Device() {
 
     }
