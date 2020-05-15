@@ -37,7 +37,7 @@ public class DevicesViewModel extends ViewModel {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 if (ResponseHandler.IsSuccessed(response)) {
-                    Log.d("DEV_POINT", "requested data success");
+                    Log.d("DEV_POINT", "requested devices data success");
                     devices.postValue(JsonConverter.DeviceList(response));
                 }
             }
