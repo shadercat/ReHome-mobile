@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.groups.info.GroupInfoActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
             android:name=".ui.devices.info.DeviceInfoActivity"
             android:screenOrientation="sensorPortrait" />
         <activity

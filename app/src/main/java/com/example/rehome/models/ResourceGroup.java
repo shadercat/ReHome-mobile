@@ -4,9 +4,11 @@ public class ResourceGroup {
     private String name;
     private String description;
     private String id;
+    private String createdAt;
 
     public ResourceGroup() {
-
+        this("======", "======", "======");
+        createdAt = "=====";
     }
 
     public ResourceGroup(String name, String description, String id) {
@@ -38,5 +40,13 @@ public class ResourceGroup {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }
