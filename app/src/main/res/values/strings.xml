@@ -14,10 +14,18 @@
     <string name="title_devices">Devices</string>
     <string name="title_groups">Groups</string>
     <string name="title_actions">Actions</string>
-    <string name="sample">SAMPLE</string>
+    <string name="sample">=====</string>
     <string name="device_code_p">Device code: %1$s</string>
     <string name="id_p">ID: %1$s</string>
     <string name="logout">Logout</string>
     <string name="email_p">Email: %1$s</string>
     <string name="creation_date_p">Creation date: %1$s</string>
+    <string name="device_info">Device Info</string>
+    <string name="description_back_arrow">Back Arrow icon</string>
+    <string name="device_info_name_p">Name: %1$s</string>
+    <string name="device_info_code_p">Device code: %1$s</string>
+    <string name="device_info_status_p">Status: %1$s</string>
+    <string name="device_info_state_p">State: %1$s</string>
+    <string name="device_info_type_p">Type: %1$s</string>
+    <string name="device_info_regDate_p">Registration date: %1$s</string>
 </resources>
