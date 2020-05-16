@@ -105,6 +105,40 @@ public class JsonConverter {
         return deviceInfo;
     }
 
+    public static ResourceGroup ResourceGroupData(JSONObject object) {
+        ResourceGroup resourceGroup = new ResourceGroup();
+        try {
+            JSONObject data = object.getJSONObject("data");
+            resourceGroup.setId(data.getString("_id"));
+            resourceGroup.setName(data.getString("name"));
+            resourceGroup.setDescription(data.getString("description"));
+            resourceGroup.setCreatedAt(parseDate(data.getString("createdAt")));
+        } catch (JSONException e) {
+            Log.e(DEV_ERR, "JSON parse error: ", e);
+        }
+        return resourceGroup;
+    }
+
+    public static List<Device> DevicesFromGroup(JSONObject object) {
+        List<Device> devices = new ArrayList<>();
+        try {
+            JSONObject data = object.getJSONObject("data");
+            JSONArray array = data.getJSONArray("devices");
+            JSONObject device;
+            for (int i = 0; i < array.length(); i++) {
+                device = array.getJSONObject(i);
+                String name = device.getString("deviceName");
+                String code = device.getString("deviceCode");
+                String status = device.getJSONObject("deviceStatus").getString("status");
+                String state = device.getJSONObject("deviceStatus").getString("state");
+                devices.add(new Device(name, code, status, state));
+            }
+        } catch (JSONException e) {
+            Log.e(DEV_ERR, "JSON parse error: ", e);
+        }
+        return devices;
+    }
+
     private static String parseDate(String mongoDate) {
         String stringDate = "unknown";
         try {
