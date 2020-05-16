@@ -28,4 +28,7 @@
     <string name="device_info_state_p">State: %1$s</string>
     <string name="device_info_type_p">Type: %1$s</string>
     <string name="device_info_regDate_p">Registration date: %1$s</string>
+    <string name="group_info">Resource group info</string>
+    <string name="group_info_description_p">Description: %1$s</string>
+    <string name="group_info_createdAt_p">Created at: %1$s</string>
 </resources>
