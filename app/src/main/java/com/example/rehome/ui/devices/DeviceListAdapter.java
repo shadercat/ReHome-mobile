@@ -21,7 +21,7 @@ public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.De
     private ItemActionHandler onClickHandler;
     private Context context;
 
-    DeviceListAdapter(Context context, List<Device> devices) {
+    public DeviceListAdapter(Context context, List<Device> devices) {
         this.devices = devices;
         this.inflater = LayoutInflater.from(context);
         this.context = context;
@@ -60,7 +60,7 @@ public class DeviceListAdapter extends RecyclerView.Adapter<DeviceListAdapter.De
         notifyDataSetChanged();
     }
 
-    interface ItemActionHandler {
+    public interface ItemActionHandler {
         void onItemClick(int position);
     }
 
