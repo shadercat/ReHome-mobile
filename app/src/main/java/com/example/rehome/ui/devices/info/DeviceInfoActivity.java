@@ -6,13 +6,20 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rehome.R;
 import com.example.rehome.models.DeviceInfo;
+import com.example.rehome.models.Trigger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeviceInfoActivity extends AppCompatActivity {
     public final static String DEVICE_CODE = "deviceCode";
@@ -25,8 +32,12 @@ public class DeviceInfoActivity extends AppCompatActivity {
     private TextView state;
     private TextView type;
     private TextView createdAt;
+    private RecyclerView triggerRecyclerView;
     private Animation rotation;
     private Animation shaking;
+    private TriggerListAdapter triggerListAdapter;
+    private List<Trigger> triggerList = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +51,7 @@ public class DeviceInfoActivity extends AppCompatActivity {
         state = findViewById(R.id.device_info_state);
         type = findViewById(R.id.device_info_type);
         createdAt = findViewById(R.id.device_info_createdAt);
+        triggerRecyclerView = findViewById(R.id.device_info_trigger_list);
 
         rotation = AnimationUtils.loadAnimation(this, R.anim.rotate);
         shaking = AnimationUtils.loadAnimation(this, R.anim.shake);
@@ -48,6 +60,21 @@ public class DeviceInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+
+        triggerListAdapter = new TriggerListAdapter(this, triggerList);
+        triggerRecyclerView.setAdapter(triggerListAdapter);
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        triggerRecyclerView.addItemDecoration(itemDecoration);
+        triggerListAdapter.setActionHandler(new TriggerListAdapter.ItemActionHandler() {
+            @Override
+            public void OnItemClick(int position) {
+                Toast toast = Toast.makeText(
+                        getApplicationContext(),
+                        getString(R.string.device_info_execute_p, triggerList.get(position).getName()),
+                        Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
 
@@ -69,6 +96,8 @@ public class DeviceInfoActivity extends AppCompatActivity {
                 state.setText(getString(R.string.device_info_state_p, deviceInfo.getState()));
                 type.setText(getString(R.string.device_info_type_p, deviceInfo.getType()));
                 createdAt.setText(getString(R.string.device_info_regDate_p, deviceInfo.getCreatedAt()));
+                triggerList = deviceInfo.triggers;
+                triggerListAdapter.setTriggersList(triggerList);
 
                 loadingStopFeedback();
             }

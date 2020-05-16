@@ -1,117 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.devices.info.DeviceInfoActivity">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:scrollbars="none">
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="5dp"
+            android:rowCount="1">
+
+            <ImageView
+                android:id="@+id/device_info_back_arrow"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/description_back_arrow"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="@string/device_info"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/device_info_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorLightGray"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:columnCount="2"
-                android:padding="5dp"
-                android:rowCount="1">
-
-                <ImageView
-                    android:id="@+id/device_info_back_arrow"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_margin="5dp"
-                    android:contentDescription="@string/description_back_arrow"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_arrow_back_black_24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:text="@string/device_info"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
-            </GridLayout>
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="5dp">
 
             <TextView
-                android:id="@+id/device_info_name"
+                android:id="@+id/device_info_device_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:background="@color/colorLightGray"
                 android:padding="10dp"
-                android:textAlignment="center"
-                android:textColor="@color/colorBlack"
-                android:textIsSelectable="true"
-                android:textSize="20sp" />
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/sample"
+                android:textIsSelectable="true" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/device_info_status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="24dp"
-                android:paddingRight="24dp"
-                android:paddingBottom="5dp">
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/sample"
+                android:textIsSelectable="true" />
 
-                <TextView
-                    android:id="@+id/device_info_device_code"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample"
-                    android:padding="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:textIsSelectable="true" />
+            <TextView
+                android:id="@+id/device_info_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/sample"
+                android:textIsSelectable="true" />
 
-                <TextView
-                    android:id="@+id/device_info_status"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample"
-                    android:padding="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:textIsSelectable="true" />
+            <TextView
+                android:id="@+id/device_info_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/sample"
+                android:textIsSelectable="true" />
 
-                <TextView
-                    android:id="@+id/device_info_state"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample"
-                    android:padding="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:textIsSelectable="true" />
-
-                <TextView
-                    android:id="@+id/device_info_type"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample"
-                    android:padding="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:textIsSelectable="true" />
-
-                <TextView
-                    android:id="@+id/device_info_createdAt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sample"
-                    android:padding="10dp"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="20dp"
-                    android:textIsSelectable="true" />
-            </LinearLayout>
-
+            <TextView
+                android:id="@+id/device_info_createdAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:text="@string/sample"
+                android:textIsSelectable="true" />
         </LinearLayout>
-    </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/device_info_triggers"
+                android:textAlignment="center" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/device_info_trigger_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/list_background"
+                android:padding="2dp"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
