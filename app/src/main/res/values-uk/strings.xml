@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ReHome</string>
+    <string name="title_home">Головна</string>
+    <string name="title_dashboard">Дошка</string>
+    <string name="title_notifications">Повідомлення</string>
+    <string name="title_user">Користувач</string>
+    <string name="login">Вхід</string>
+    <string name="email">Електрона пошта</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забули пароль?</string>
+    <string name="create_account">Створити акаунт</string>
+    <string name="wrong_login_data">Електрона пошта або пароль неправильні.</string>
+    <string name="click_to_exit">Натисніть ще раз для того, щоб вийти.</string>
+    <string name="title_devices">Пристрої</string>
+    <string name="title_groups">Групи</string>
+    <string name="title_actions">Дії</string>
+    <string name="sample">=====</string>
+    <string name="device_code_p">Код пристрою: %1$s</string>
+    <string name="id_p">ID: %1$s</string>
+    <string name="logout">Вихід</string>
+    <string name="email_p">Електрона пошта: %1$s</string>
+    <string name="creation_date_p">Дата створення: %1$s</string>
+    <string name="device_info">Інформація пристрою</string>
+    <string name="description_back_arrow">Back Arrow icon</string>
+    <string name="device_info_name_p">Ім\'я: %1$s</string>
+    <string name="device_info_code_p">Код пристрою: %1$s</string>
+    <string name="device_info_status_p">Статус: %1$s</string>
+    <string name="device_info_state_p">Стан: %1$s</string>
+    <string name="device_info_type_p">Тип: %1$s</string>
+    <string name="device_info_regDate_p">Дата реєстрації: %1$s</string>
+    <string name="device_info_triggers">Трігери</string>
+    <string name="device_info_execute_p">Виконання %1$s</string>
+    <string name="group_info">Інформація групи</string>
+    <string name="group_info_description_p">Опис: %1$s</string>
+    <string name="group_info_createdAt_p">Створений: %1$s</string>
+    <string name="group_info_devices">Пристрої</string>
+</resources>
