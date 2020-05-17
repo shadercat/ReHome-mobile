@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rehome.R;
 import com.example.rehome.models.ResourceGroup;
+import com.example.rehome.models.adapters.GroupListAdapter;
 import com.example.rehome.ui.groups.info.GroupInfoActivity;
 
 import java.util.ArrayList;

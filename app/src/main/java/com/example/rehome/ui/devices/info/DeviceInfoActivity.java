@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.rehome.R;
 import com.example.rehome.models.DeviceInfo;
 import com.example.rehome.models.Trigger;
+import com.example.rehome.models.adapters.TriggerListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.rehome.ui.devices;
+package com.example.rehome.models.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

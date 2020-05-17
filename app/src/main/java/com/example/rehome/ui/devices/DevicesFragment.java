@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.rehome.R;
 import com.example.rehome.models.Device;
+import com.example.rehome.models.adapters.DeviceListAdapter;
 import com.example.rehome.ui.devices.info.DeviceInfoActivity;
 
 import java.util.ArrayList;

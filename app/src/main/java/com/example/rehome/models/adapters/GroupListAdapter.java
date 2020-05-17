@@ -1,4 +1,4 @@
-package com.example.rehome.ui.groups;
+package com.example.rehome.models.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,7 +20,7 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.Grou
     private ItemActionHandler onClickHandler;
     private Context context;
 
-    GroupListAdapter(Context context, List<ResourceGroup> resourceGroups) {
+    public GroupListAdapter(Context context, List<ResourceGroup> resourceGroups) {
         this.resourceGroups = resourceGroups;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
@@ -54,7 +54,7 @@ public class GroupListAdapter extends RecyclerView.Adapter<GroupListAdapter.Grou
         notifyDataSetChanged();
     }
 
-    interface ItemActionHandler {
+    public interface ItemActionHandler {
         void OnItemClick(int position);
     }
 
